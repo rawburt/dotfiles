@@ -1,7 +1,11 @@
-call plug#begin('~/.vim/plugged')
-Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'flazz/vim-colorschemes'
-call plug#end()
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'rust-lang/rust.vim'
+call vundle#end()
+filetype plugin indent on
+
 
 syntax on
 set tabstop=2
@@ -13,6 +17,5 @@ set autoindent
 set cinoptions=l1
 set number
 set nowrap
-" colorscheme slate
-colorscheme pacific
+colorscheme slate
 set backspace=indent,eol,start
