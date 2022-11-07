@@ -19,3 +19,11 @@ set number
 set nowrap
 colorscheme slate
 set backspace=indent,eol,start
+
+" trim whitespace at EOL
+fun! TrimWhitespace()
+  let l:save = winsaveview()
+  keeppatterns %s/\s\+$//e
+  call winrestview(l:save)
+endfun
+command! TrimWhitespace call TrimWhitespace()
