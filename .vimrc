@@ -4,7 +4,10 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'rust-lang/rust.vim'
 call vundle#end()
-filetype plugin indent on
+
+filetype on
+filetype plugin on
+filetype indent on
 
 
 syntax on
@@ -19,6 +22,9 @@ set number
 set nowrap
 colorscheme slate
 set backspace=indent,eol,start
+
+" makefile needs real tabs
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 
 " trim whitespace at EOL
 fun! TrimWhitespace()
